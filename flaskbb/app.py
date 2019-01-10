@@ -135,7 +135,7 @@ def create_app(config=None, instance_path=None):
     configure_template_filters(app)
     configure_context_processors(app)
     configure_before_handlers(app)
-    configure_errorhandlers(app)
+    # configure_errorhandlers(app)
     configure_migrations(app)
     configure_translations(app)
     app.pluggy.hook.flaskbb_additional_setup(app=app, pluggy=app.pluggy)
@@ -405,7 +405,7 @@ def configure_translations(app):
         if (
             current_user
             and current_user.is_authenticated
-            and current_user.language
+             and current_user.language
         ):
             return current_user.language
         # otherwise we will just fallback to the default language

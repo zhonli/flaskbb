@@ -32,6 +32,7 @@ class QuickreplyForm(FlaskForm):
 
     def save(self, user, topic):
         post = Post(content=self.content.data)
+        current_app.pluggy.hook.flaskbb_form_new_post_save(form=self)
         return post.save(user=user, topic=topic)
 
 

@@ -41,6 +41,8 @@ from flaskbb.utils.settings import flaskbb_config
 from .locals import current_topic, current_forum, current_category
 from .utils import force_login_if_needed
 
+from .exceptions import StopNewPost, StopEditPost, StopNewTopic
+
 impl = HookimplMarker("flaskbb")
 
 logger = logging.getLogger(__name__)
@@ -231,8 +233,16 @@ class ViewTopic(MethodView):
             return redirect("forum.view_topic", topic_id=topic_id, slug=slug)
 
         elif form.validate_on_submit():
-            post = form.save(real(current_user), topic)
-            return redirect(url_for("forum.view_post", post_id=post.id))
+            try:
+                post = form.save(real(current_user), topic)
+                return redirect(url_for("forum.view_post", post_id=post.id))
+            except StopNewPost as e:
+                flash(e.reason, "danger")
+            except Exception:
+                flash(_("Unrecoverable error while posting reply"))
+            return redirect(
+                url_for("forum.view_topic", topic_id=topic_id, slug=slug)
+            )
 
         else:
             for e in form.errors.get("content", []):
@@ -270,8 +280,13 @@ class NewTopic(MethodView):
         forum_instance = Forum.query.filter_by(id=forum_id).first_or_404()
         form = self.form()
         if form.validate_on_submit():
-            topic = form.save(real(current_user), forum_instance)
-            return redirect(url_for("forum.view_topic", topic_id=topic.id))
+            try:
+                topic = form.save(real(current_user), forum_instance)
+                return redirect(url_for("forum.view_topic", topic_id=topic.id))
+            except StopNewTopic as e:
+                flash(e.reason, "danger")
+            except Exception:
+                flash(_("Unrecoverable error while posting new topic"))
 
         return render_template(
             "forum/new_topic.html", forum=forum_instance, form=form
@@ -493,8 +508,13 @@ class NewPost(MethodView):
             post = Post.query.filter_by(id=post_id).first_or_404()
 
         if form.validate_on_submit():
-            post = form.save(real(current_user), topic)
-            return redirect(url_for("forum.view_post", post_id=post.id))
+            try:
+                post = form.save(real(current_user), topic)
+                return redirect(url_for("forum.view_post", post_id=post.id))
+            except StopNewPost as e:
+                flash(e.reason, "danger")
+            except Exception:
+                flash(_("Unrecoverable error while submitting new post"))
 
         return render_template("forum/new_post.html", topic=topic, form=form)
 
@@ -529,11 +549,17 @@ class EditPost(MethodView):
         form = self.form(obj=post)
 
         if form.validate_on_submit():
-            form.populate_obj(post)
-            post.date_modified = time_utcnow()
-            post.modified_by = real(current_user).username
-            post.save()
-            return redirect(url_for("forum.view_post", post_id=post.id))
+            try:
+                current_app.pluggy.hook.flaskbb_form_edit_post_save(form=form)
+                form.populate_obj(post)
+                post.date_modified = time_utcnow()
+                post.modified_by = real(current_user).username
+                post.save()
+                return redirect(url_for("forum.view_post", post_id=post.id))
+            except StopEditPost as e:
+                flash(e.reason, "danger")
+            except Exception:
+                flash(_("Unrecoverable error while submiting modified post"))
 
         return render_template(
             "forum/new_post.html", topic=post.topic, form=form, edit_mode=True

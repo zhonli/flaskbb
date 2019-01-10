@@ -9,6 +9,13 @@
     :copyright: (c) 2014 by the FlaskBB Team.
     :license: BSD, see LICENSE for more details.
 """
+# append by zhonli
+import sys
+reload(sys)
+sys.setdefaultencoding('utf-8')
+# end append
+
+#from gevent import monkey; monkey.patch_all()
 __version__ = "2.0.2"
 
 import logging

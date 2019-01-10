@@ -513,6 +513,13 @@ def flaskbb_form_new_post_save(form):
     :param post: The post object.
     """
 
+@spec
+def flaskbb_form_edit_post_save(form):
+    """Added by zhonli
+    This hook is called while populating the post object with
+    the data from the form. The post object will be saved after the hook
+    call.
+    """
 
 @spec
 def flaskbb_form_new_topic(form):
