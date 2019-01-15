@@ -14,6 +14,8 @@ from flask_wtf import FlaskForm
 from flaskbb._compat import text_type, iteritems
 from enum import Enum
 
+from flask_babelplus import lazy_gettext as _
+
 
 class FlaskBBForm(FlaskForm):
     def populate_errors(self, errors):
@@ -93,23 +95,23 @@ def generate_settings_form(settings):  # noqa: C901
         if setting.value_type == SettingValueType.integer:
             setattr(
                 SettingsForm, setting.key,
-                IntegerField(setting.name, validators=field_validators,
-                             description=setting.description)
+                IntegerField(_(setting.name), validators=field_validators,
+                             description=_(setting.description))
             )
         # FloatField
         elif setting.value_type == SettingValueType.float:
             setattr(
                 SettingsForm, setting.key,
-                FloatField(setting.name, validators=field_validators,
-                           description=setting.description)
+                FloatField(_(setting.name), validators=field_validators,
+                           description=_(setting.description))
             )
 
         # TextField
         elif setting.value_type == SettingValueType.string:
             setattr(
                 SettingsForm, setting.key,
-                TextField(setting.name, validators=field_validators,
-                          description=setting.description)
+                TextField(_(setting.name), validators=field_validators,
+                          description=_(setting.description))
             )
 
         # SelectMultipleField
@@ -123,10 +125,10 @@ def generate_settings_form(settings):  # noqa: C901
             setattr(
                 SettingsForm, setting.key,
                 SelectMultipleField(
-                    setting.name,
+                    _(setting.name),
                     choices=setting.extra['choices'](),
                     coerce=coerce_to,
-                    description=setting.description
+                    description=_(setting.description)
                 )
             )
 
@@ -141,17 +143,17 @@ def generate_settings_form(settings):  # noqa: C901
             setattr(
                 SettingsForm, setting.key,
                 SelectField(
-                    setting.name,
+                    _(setting.name),
                     coerce=coerce_to,
                     choices=setting.extra['choices'](),
-                    description=setting.description)
+                    description=_(setting.description))
             )
 
         # BooleanField
         elif setting.value_type == SettingValueType.boolean:
             setattr(
                 SettingsForm, setting.key,
-                BooleanField(setting.name, description=setting.description)
+                BooleanField(_(setting.name), description=_(setting.description))
             )
 
     return SettingsForm

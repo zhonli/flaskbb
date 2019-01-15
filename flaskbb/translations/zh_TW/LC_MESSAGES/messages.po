@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version:  FlaskBB\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2019-01-09 11:56+0800\n"
+"POT-Creation-Date: 2019-01-14 19:33+0800\n"
 "PO-Revision-Date: 2018-05-03 10:17+0000\n"
 "Last-Translator: Peter Justin\n"
 "Language: zh_TW\n"
@@ -395,9 +395,9 @@ msgstr "論壇"
 msgid "Users"
 msgstr "使用者"
 
-#: flaskbb/forum/views.py:102 flaskbb/forum/views.py:842
-#: flaskbb/forum/views.py:860 flaskbb/forum/views.py:938
-#: flaskbb/forum/views.py:958
+#: flaskbb/forum/views.py:102 flaskbb/forum/views.py:852
+#: flaskbb/forum/views.py:870 flaskbb/forum/views.py:948
+#: flaskbb/forum/views.py:968
 msgid "You are not allowed to access that forum"
 msgstr ""
 
@@ -417,164 +417,168 @@ msgstr ""
 msgid "Unrecoverable error while posting reply"
 msgstr ""
 
-#: flaskbb/forum/views.py:262
+#: flaskbb/forum/views.py:266
 msgid "You are not allowed to post a topic here"
 msgstr ""
 
-#: flaskbb/forum/views.py:285
+#: flaskbb/forum/views.py:289
 msgid "Unrecoverable error while posting new topic"
 msgstr ""
 
-#: flaskbb/forum/views.py:302
+#: flaskbb/forum/views.py:306
 msgid "You are not allowed to manage this forum"
 msgstr ""
 
-#: flaskbb/forum/views.py:356
+#: flaskbb/forum/views.py:360
 msgid "In order to perform this action you have to select at least one topic."
 msgstr ""
 
-#: flaskbb/forum/views.py:372
+#: flaskbb/forum/views.py:376
 #, python-format
 msgid "%(count)s topics locked."
 msgstr ""
 
-#: flaskbb/forum/views.py:382
+#: flaskbb/forum/views.py:386
 #, python-format
 msgid "%(count)s topics unlocked."
 msgstr ""
 
-#: flaskbb/forum/views.py:393
+#: flaskbb/forum/views.py:397
 #, python-format
 msgid "%(count)s topics highlighted."
 msgstr ""
 
-#: flaskbb/forum/views.py:403
+#: flaskbb/forum/views.py:407
 #, python-format
 msgid "%(count)s topics trivialized."
 msgstr ""
 
-#: flaskbb/forum/views.py:414
+#: flaskbb/forum/views.py:418
 #, python-format
 msgid "%(count)s topics deleted."
 msgstr ""
 
-#: flaskbb/forum/views.py:422
+#: flaskbb/forum/views.py:426
 msgid "Please choose a new forum for the topics."
 msgstr ""
 
-#: flaskbb/forum/views.py:432
+#: flaskbb/forum/views.py:436
 msgid "You do not have the permissions to move this topic."
 msgstr "您沒有權限移動這個主題"
 
-#: flaskbb/forum/views.py:438
+#: flaskbb/forum/views.py:442
 msgid "Topics moved."
 msgstr ""
 
-#: flaskbb/forum/views.py:440
+#: flaskbb/forum/views.py:444
 msgid "Failed to move topics."
 msgstr ""
 
-#: flaskbb/forum/views.py:452
+#: flaskbb/forum/views.py:456
 #, python-format
 msgid "%(count)s topics hidden."
 msgstr ""
 
-#: flaskbb/forum/views.py:462
+#: flaskbb/forum/views.py:466
 #, python-format
 msgid "%(count)s topics unhidden."
 msgstr ""
 
-#: flaskbb/forum/views.py:466
+#: flaskbb/forum/views.py:470
 msgid "Unknown action requested"
 msgstr ""
 
-#: flaskbb/forum/views.py:476
+#: flaskbb/forum/views.py:480
 msgid "You are not allowed to post a reply"
 msgstr ""
 
-#: flaskbb/forum/views.py:513
+#: flaskbb/forum/views.py:517
 msgid "Unrecoverable error while submitting new post"
 msgstr ""
 
-#: flaskbb/forum/views.py:527
+#: flaskbb/forum/views.py:531
 msgid "You are not allowed to edit that post"
 msgstr ""
 
-#: flaskbb/forum/views.py:575
+#: flaskbb/forum/views.py:562
+msgid "Unrecoverable error while submiting modified post"
+msgstr ""
+
+#: flaskbb/forum/views.py:585
 msgid "Thanks for reporting."
 msgstr "謝謝您的舉報"
 
-#: flaskbb/forum/views.py:679
+#: flaskbb/forum/views.py:689
 #, python-format
 msgid "%(topic_count)s topics untracked."
 msgstr ""
 
-#: flaskbb/forum/views.py:708
+#: flaskbb/forum/views.py:718
 msgid "You are not allowed to delete this topic"
 msgstr ""
 
-#: flaskbb/forum/views.py:731
+#: flaskbb/forum/views.py:741
 msgid "You are not allowed to lock this topic"
 msgstr ""
 
-#: flaskbb/forum/views.py:752
+#: flaskbb/forum/views.py:762
 msgid "You are not allowed to unlock this topic"
 msgstr ""
 
-#: flaskbb/forum/views.py:773
+#: flaskbb/forum/views.py:783
 msgid "You are not allowed to highlight this topic"
 msgstr ""
 
-#: flaskbb/forum/views.py:794
+#: flaskbb/forum/views.py:804
 msgid "You are not allowed to trivialize this topic"
 msgstr ""
 
-#: flaskbb/forum/views.py:815
+#: flaskbb/forum/views.py:825
 msgid "You are not allowed to delete this post"
 msgstr ""
 
-#: flaskbb/forum/views.py:890
+#: flaskbb/forum/views.py:900
 #, python-format
 msgid "Forum %(forum)s marked as read."
 msgstr "%(forum)s 論壇已經標記為已讀"
 
-#: flaskbb/forum/views.py:915
+#: flaskbb/forum/views.py:925
 msgid "All forums marked as read."
 msgstr "全部論壇已標記為已讀"
 
-#: flaskbb/forum/views.py:979
+#: flaskbb/forum/views.py:989
 msgid "You do not have permission to hide this topic"
 msgstr ""
 
-#: flaskbb/forum/views.py:997
+#: flaskbb/forum/views.py:1007
 msgid "You do not have permission to unhide this topic"
 msgstr ""
 
-#: flaskbb/forum/views.py:1013
+#: flaskbb/forum/views.py:1023
 msgid "You do not have permission to hide this post"
 msgstr ""
 
-#: flaskbb/forum/views.py:1017
+#: flaskbb/forum/views.py:1027
 msgid "Post is already hidden"
 msgstr ""
 
-#: flaskbb/forum/views.py:1026
+#: flaskbb/forum/views.py:1036
 msgid "Topic hidden"
 msgstr ""
 
-#: flaskbb/forum/views.py:1028
+#: flaskbb/forum/views.py:1038
 msgid "Post hidden"
 msgstr ""
 
-#: flaskbb/forum/views.py:1043
+#: flaskbb/forum/views.py:1053
 msgid "You do not have permission to unhide this post"
 msgstr ""
 
-#: flaskbb/forum/views.py:1047
+#: flaskbb/forum/views.py:1057
 msgid "Post is already unhidden"
 msgstr ""
 
-#: flaskbb/forum/views.py:1052
+#: flaskbb/forum/views.py:1062
 msgid "Post unhidden"
 msgstr ""
 
@@ -620,7 +624,7 @@ msgstr ""
 
 #: flaskbb/management/forms.py:116 flaskbb/management/forms.py:254
 #: flaskbb/management/forms.py:414 flaskbb/management/forms.py:496
-#: flaskbb/templates/management/settings.html:70 flaskbb/user/forms.py:43
+#: flaskbb/templates/management/settings.html:72 flaskbb/user/forms.py:43
 #: flaskbb/user/forms.py:69 flaskbb/user/forms.py:93 flaskbb/user/forms.py:109
 msgid "Save"
 msgstr "儲存"
@@ -1947,6 +1951,14 @@ msgstr ""
 #: flaskbb/templates/management/reports.html:90
 msgid "No reports."
 msgstr "無舉報"
+
+#: flaskbb/templates/management/settings.html:20
+msgid "FlaskBB Settings"
+msgstr ""
+
+#: flaskbb/templates/management/settings.html:29
+msgid "Plugin Settings"
+msgstr ""
 
 #: flaskbb/templates/management/users.html:73
 msgid "Ban selected Users"

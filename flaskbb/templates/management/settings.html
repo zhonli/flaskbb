@@ -6,7 +6,7 @@
 <ol class="breadcrumb flaskbb-breadcrumb">
     <li><a href="{{ url_for('forum.index') }}">{% trans %}Forum{% endtrans %}</a></li>
     <li><a href="{{ url_for('management.overview') }}">{% trans %}Management{% endtrans %}</a></li>
-    <li class="active">{{ active_nav.get('title') }}</li>
+    <li class="active">{{ _(active_nav.get('title')) }}</li>
 </ol>
 {% endblock %}
 
@@ -17,21 +17,23 @@
 <div class="col-md-3 settings-col">
     <div class="nav-sidebar">
         <ul class="nav">
-        <li class="nav-header">FlaskBB Settings</li>
+            <li class="nav-header">{% trans %}FlaskBB Settings{% endtrans %}</li>
         {% for group in all_groups %}
             {% if group.key == active_nav.get('key') %}
-                <li class="active"><a href="{{ url_for('management.settings', slug=group.key) }}">{{ group.name }}</a></li>
+                <li class="active"><a href="{{ url_for('management.settings', slug=group.key) }}">{{ _(group.name) }}</a></li>
             {% else %}
-                <li><a href="{{ url_for('management.settings', slug=group.key) }}">{{ group.name }}</a></li>
+                <li><a href="{{ url_for('management.settings', slug=group.key) }}">{{ _(group.name) }}</a></li>
             {% endif %}
         {% endfor %}
         {% if all_plugins %}
-        <li class="nav-header">Plugin Settings</li>
+        <li class="nav-header">{% trans %}Plugin Settings{% endtrans %}</li>
         {% for plugin in all_plugins %}
             {% if plugin.name == active_nav.get('key') %}
-                <li class="active"><a href="{{ url_for('management.settings', plugin=plugin.name) }}">{{ plugin.name.title() }}</a></li>
+                <li class="active"><a href="{{ url_for('management.settings', plugin=plugin.name)
+                        }}">{{ _(plugin.name.title()) }}</a></li>
             {% else %}
-                <li><a href="{{ url_for('management.settings', plugin=plugin.name) }}">{{ plugin.name.title() }}</a></li>
+                <li><a href="{{ url_for('management.settings', plugin=plugin.name) }}">{{
+                        _(plugin.name.title()) }}</a></li>
             {% endif %}
         {% endfor %}
         {% endif %}
@@ -42,7 +44,7 @@
 <div class="col-md-9 settings-col with-left-border">
     <div class="panel settings-panel">
         <div class="panel-heading settings-head">
-            <span class="fa fa-cogs"></span> {{ active_nav.get('title') }}
+            <span class="fa fa-cogs"></span> {{ _(active_nav.get('title')) }}
         </div>
         <div class="panel-body settings-body">
             <div class="settings-content">
