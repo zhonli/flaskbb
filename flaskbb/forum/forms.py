@@ -93,7 +93,7 @@ class ReportForm(FlaskForm):
 
 class UserSearchForm(FlaskForm):
     search_query = StringField(_("Search"), validators=[
-        DataRequired(), Length(min=3, max=50)
+        DataRequired(), Length(min=1, max=50)
     ])
 
     submit = SubmitField(_("Search"))
@@ -105,7 +105,7 @@ class UserSearchForm(FlaskForm):
 
 class SearchPageForm(FlaskForm):
     search_query = StringField(_("Criteria"), validators=[
-        DataRequired(), Length(min=3, max=50)])
+        DataRequired(), Length(min=1, max=50)])
 
     search_types = SelectMultipleField(_("Content"), validators=[
         DataRequired()], choices=[('post', _('Post')), ('topic', _('Topic')),
