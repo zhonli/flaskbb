@@ -167,18 +167,19 @@
             {% endblock %}
 
         </div> <!-- end flaskbb-layout -->
-
+        
         {% block javascript %}
-        <!-- jquery and bootstrap and flaskbb.js -->
-        <script src="{{ url_for('static', filename='js/scripts.min.js') }}"></script>
-
+        <!-- jquery and bootstrap js -->
+        <script src="{{ url_for('static', filename='js/runtime.min.js') }}"></script>
         <script type="text/javascript">
-        var FORUM_URL_PREFIX="{{ config['FORUM_URL_PREFIX'] }}";
-
-        $(function () {
-            $('[data-toggle="tooltip"]').tooltip()
-        })
+            var FORUM_URL_PREFIX="{{ config['FORUM_URL_PREFIX'] }}";
+            var CUR_LANG = "{{ current_user.language }}";
+            $(function () {
+                $('[data-toggle="tooltip"]').tooltip()
+            })
         </script>
+        <!-- flaskbb and editor js -->
+        <script src="{{ url_for('static', filename='js/scripts.min.js') }}"></script>
         {% endblock %}
 
         {# for extra scripts in other templates. #}
