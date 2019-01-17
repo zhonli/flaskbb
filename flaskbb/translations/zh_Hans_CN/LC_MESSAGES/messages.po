@@ -2208,7 +2208,7 @@ msgid "The minimum length of the username. Changing this will only affect new re
 msgstr "设置用户名的最小长度，修改只影响最新的注册"
 
 msgid "Username Maximum Length"
-msgstr "最用名最大长度"
+msgstr "用户名最大长度"
 
 msgid "The Maximum length of the username. Changing this will only affect new registrations."
 msgstr "设置用户名的最大长度，修改只影响最新注册"
@@ -2338,6 +2338,63 @@ msgstr "敏感词库"
 
 msgid "sensitive word library base path"
 msgstr "指定敏感词库的绝对路径"
+
+msgid "Editor Cheatsheet"
+msgstr "编辑器使用"
+
+msgid "Emojis"
+msgstr "表情符号"
+
+msgid "To enter emoji, type a colon and let the editor autocomplete the emoji short name for you. A full list of available emoji can be found <a href="https://unicode.org/emoji/charts/full-emoji-list.html">here</a>."
+msgstr "输入冒号后编辑器会提示符号简写码，自动完成输入表情符号，所有可用的表情符号可以查看 <a href="https://unicode.org/emoji/charts/full-emoji-list.html">这里</a>。"
+
+msgid "Typography"
+msgstr "排版"
+
+msgid "Header1"
+msgstr "标题1"
+
+msgid "Header2"
+msgstr "标题2"
+
+msgid "Unordered item1"
+msgstr "无序列表项1"
+
+msgid "Unordered item2"
+msgstr "无序列表项2"
+
+msgid "Ordered item1"
+msgstr "有序列表项1"
+
+msgid "Ordered item2"
+msgstr "有序列表项2"
+
+msgid "Emphasized text"
+msgstr "强调文字"
+
+msgid "Bold Text"
+msgstr "加粗文字"
+
+msgid "Horizontal rule"
+msgstr "水平分割线"
+
+msgid "Blockquote"
+msgstr "引用文字"
+
+msgid "Links"
+msgstr "链接"
+
+msgid "Img Description"
+msgstr "图片描述"
+
+msgid "Description"
+msgstr "描述"
+
+msgid "Code"
+msgstr "代码"
+
+msgid "For a more detailed info visit the <a href="http://daringfireball.net/projects/markdown/basics">official Markdown website</a>"
+msgstr "获取更多信息，请查阅 <a href="http://daringfireball.net/projects/markdown/basics">Markdown 官方站点</a>"
 
 #~ msgid "Preview"
 #~ msgstr "预览"

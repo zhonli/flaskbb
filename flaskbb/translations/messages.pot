@@ -2334,3 +2334,61 @@ msgstr ""
 
 msgid "sensitive word library base path"
 msgstr ""
+
+msgid "Editor Cheatsheet"
+msgstr ""
+
+msgid "Emojis"
+msgstr ""
+
+msgid "To enter emoji, type a colon and let the editor autocomplete the emoji short name for you. A full list of available emoji can be found <a href="https://unicode.org/emoji/charts/full-emoji-list.html">here</a>."
+msgstr ""
+
+msgid "Typography"
+msgstr ""
+
+msgid "Header1"
+msgstr ""
+
+msgid "Header2"
+msgstr ""
+
+msgid "Unordered item1"
+msgstr ""
+
+msgid "Unordered item2"
+msgstr ""
+
+msgid "Ordered item1"
+msgstr ""
+
+msgid "Ordered item2"
+msgstr ""
+
+msgid "Emphasized text"
+msgstr ""
+
+msgid "Bold Text"
+msgstr ""
+
+msgid "Horizontal rule"
+msgstr ""
+
+msgid "Blockquote"
+msgstr ""
+
+msgid "Links"
+msgstr ""
+
+msgid "Img Description"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
+msgid "For a more detailed info visit the <a
+href="http://daringfireball.net/projects/markdown/basics">official Markdown website</a>"
+msgstr ""
