@@ -60,6 +60,10 @@
                 <div class="col-md-3 col-sm-3 col-xs-5">{{ user.primary_group.name }}</div>
                 <div class="col-md-2 col-sm-2 hidden-xs">{{ user.post_count }}</div>
             </div>
+            {% else %}
+            <div class="row page-row hover clearfix">
+                <div class="col-md-12 col-sm-12 col-xs-12">{% trans %}No users found matching your search criteria.{% endtrans %}</div>
+            </div>
             {% endfor %}
         </div>
     </div>
