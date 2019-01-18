@@ -495,7 +495,7 @@ msgstr "您没有答复的权限"
 
 #: flaskbb/forum/views.py:517
 msgid "Unrecoverable error while submitting new post"
-msgstr ""
+msgstr "回复发生未知错误"
 
 #: flaskbb/forum/views.py:531
 msgid "You are not allowed to edit that post"
@@ -503,7 +503,7 @@ msgstr "您没有编辑帖子的权限"
 
 #: flaskbb/forum/views.py:562
 msgid "Unrecoverable error while submiting modified post"
-msgstr ""
+msgstr "修改发生未知错误"
 
 #: flaskbb/forum/views.py:585
 msgid "Thanks for reporting."
@@ -1983,7 +1983,7 @@ msgstr "尚未发表帖子"
 msgid ""
 "<strong><a href=\"%(topic_url)s\">%(topic_title)s</a></strong> in forum "
 "<a href=\"%(forum_url)s\">%(forum_title)s</a>"
-msgstr ""
+msgstr "<strong><a href=\"%(topic_url)s\">%(topic_title)s</a></strong> 于论坛 <a href=\"%(forum_url)s\">%(forum_title)s</a>"
 
 #: flaskbb/templates/user/all_topics.html:44
 msgid "No topics yet"
