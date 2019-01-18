@@ -70,7 +70,7 @@ $(".flaskbb-editor").markdown({
             }
         })
         .done(function(msg) {
-            parse_emoji(output);
+            parse_emoji(msg);
         })
         .fail(function(error) {
             console.error("Couldn't send text to markdown preview endpoint: " + error);

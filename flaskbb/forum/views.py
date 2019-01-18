@@ -240,16 +240,11 @@ class ViewTopic(MethodView):
                 flash(e.reason, "danger")
             except Exception:
                 flash(_("Unrecoverable error while posting reply"))
-            return redirect(
-                url_for("forum.view_topic", topic_id=topic_id, slug=slug)
-            )
-
         else:
             for e in form.errors.get("content", []):
                 flash(e, "danger")
-            return redirect(
-                url_for("forum.view_topic", topic_id=topic_id, slug=slug)
-            )
+
+        return self.get(topic_id=topic_id, slug=slug)
 
     def form(self):
         if Permission(CanPostReply):
