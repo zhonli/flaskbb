@@ -41,6 +41,7 @@ from flaskbb.utils.settings import flaskbb_config
 from .locals import current_topic, current_forum, current_category
 from .utils import force_login_if_needed
 
+from ..core.exceptions import BaseFlaskBBError
 from .exceptions import StopNewPost, StopEditPost, StopNewTopic
 
 impl = HookimplMarker("flaskbb")
@@ -238,6 +239,8 @@ class ViewTopic(MethodView):
                 return redirect(url_for("forum.view_post", post_id=post.id))
             except StopNewPost as e:
                 flash(e.reason, "danger")
+            except BaseFlaskBBError as e:
+                flask(e.reason, "warning")
             except Exception:
                 flash(_("Unrecoverable error while posting reply"))
         else:
@@ -280,6 +283,8 @@ class NewTopic(MethodView):
                 return redirect(url_for("forum.view_topic", topic_id=topic.id))
             except StopNewTopic as e:
                 flash(e.reason, "danger")
+            except BaseFlaskBBError as e:
+                flask(e.reason, "warning")
             except Exception:
                 flash(_("Unrecoverable error while posting new topic"))
 
@@ -508,6 +513,8 @@ class NewPost(MethodView):
                 return redirect(url_for("forum.view_post", post_id=post.id))
             except StopNewPost as e:
                 flash(e.reason, "danger")
+            except BaseFlaskBBError as e:
+                flash(e.reason, "warning")
             except Exception:
                 flash(_("Unrecoverable error while submitting new post"))
 
@@ -553,6 +560,8 @@ class EditPost(MethodView):
                 return redirect(url_for("forum.view_post", post_id=post.id))
             except StopEditPost as e:
                 flash(e.reason, "danger")
+            except BaseFlaskBBError as e:
+                flask(e.reason, "warning")
             except Exception:
                 flash(_("Unrecoverable error while submiting modified post"))
 
