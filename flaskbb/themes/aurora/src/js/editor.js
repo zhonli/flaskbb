@@ -45,7 +45,7 @@ $(".flaskbb-editor").markdown({
             data: [{
                 name: "cmdHelp",
                 toggle: false, // this param only take effect if you load bootstrap.js
-                title: "Help",
+                title: cur_lang=="zh_CN"?"帮助":"Help",
                 icon: "fa fa-question",
                 btnClass: 'btn btn-success',
                 callback: function(e){
